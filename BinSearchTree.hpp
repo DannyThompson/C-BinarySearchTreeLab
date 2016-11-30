@@ -1,0 +1,42 @@
+class BinSearchTree {                                                                                                                                                                                       
+public:                                                                                                                                                                                                     
+  ~BinSearchTree();                                                                                                                                                                                         
+                                                                                                                                                                                                            
+  void insert( int v );                                                                                                                                                                                     
+  bool find( int v );                                                                                                                                                                                       
+  bool iterFind( int v );                                                                                                                                                                                   
+  int size();                                                                                                                                                                                               
+  void inorderDump();                                                                                                                                                                                       
+  void levelOrderDump();                                                                                                                                                                                    
+  bool remove( int v );                                                                                                                                                                                     
+  int kthSmallest( int k );                                                                                                                                                                                 
+  void valuesAtLevel( int k );                                                                                                                                                                              
+  void iterValuesAtLevel( int k );                                                                                                                                                                          
+  int maxDepth();                                                                                                                                                                                           
+  int iterMaxDepth();                                                                                                                                                                                       
+  bool hasRootToLeafSum( int sum );                                                                                                                                                                         
+  bool areIdentical( BinSearchTree *bst );                                                                                                                                                                  
+  BinSearchTree *intersectWith( BinSearchTree *bst );                                                                                                                                                       
+  BinSearchTree *unionWith( BinSearchTree *bst );                                                                                                                                                           
+  BinSearchTree *differenceOf( BinSearchTree *bst );                                                                                                                                                        
+                                                                                                                                                                                                            
+private:                                                                                                                                                                                                    
+  TreeNode *local_insert( TreeNode*, int );                                                                                                                                                                 
+  TreeNode *root;                                                                                                                                                                                           
+                                                                                                                                                                                                            
+  bool local_find( TreeNode *, int); //Helper for find()                                                                                                                                                    
+  int local_size(TreeNode*); //Helper for size()                                                                                                                                                            
+  int max(int, int); //Helper for maxDepth()                                                                                                                                                                
+  int maxH(TreeNode*); //Additional Helper for max                                                                                                                                                          
+  void print(TreeNode *root); //Helper for inorderDump;                                                                                                                                                     
+  TreeNode *removeH(TreeNode*, int); //Helper for remove                                                                                                                                                    
+  TreeNode *min(TreeNode*); //finds min value in a subtree. Helper for remove                                                                                                                               
+  int kH( TreeNode*, int ); //Kth smallest helper function                                                                                                                                                  
+  bool rtlsH( TreeNode*, int);                                                                                                                                                                              
+                                                                                                                                                                                                            
+  void local_values(TreeNode*, int, int);                                                                                                                                                                   
+  bool local_identical( TreeNode*, TreeNode* );                                                                                                                                                             
+  void local_intersect( TreeNode*, TreeNode*, BinSearchTree* );                                                                                                                                             
+  void local_union( TreeNode*, BinSearchTree* );                                                                                                                                                            
+  void local_difference( TreeNode*, BinSearchTree* );                                                                                                                                                       
+};                                                                    
